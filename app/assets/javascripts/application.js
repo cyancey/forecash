@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require transaction.js
+//= require chart.js
+//= require controller.js
 //= require_tree .
