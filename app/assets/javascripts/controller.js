@@ -1,19 +1,28 @@
-Controller = {
-  initialize: function(){
-    
+var Controller = {
+  start: function(){
+    this.getTransactions()
   },
-  start: function(){
+  getTransactions: function(){
+    var request = $.ajax({
+      url: "/transactions",
+      type: "get"
+    })
 
-  }
-}
-
-Controller.prototype = {
-  start: function(){
-    //AJAX to the server for all the transaction data- from both QB and database
-    //Make a container object for the transactions
-    //Make transaction objects out of the data and add them to the container
-    //Ask the List controller to update the list view based on the container object
-    //Ask the Chart controller to update itself based on the container object
+    request.done(handleTransactions)
+    request.fail(debug)
+  },
+  handleTransactions: function(response){
+    var transactions = this.importTransactions(response)
+    this.scenario = new Scenario(transactions)
+    List.update(scenario)
+    Chart.update(scenario)
+  },
+  importTransactions: function(data){
+    //iterate over data
+    //make a new transaction object out of each data
+  },
+  debug: function(response){
+    debugger
   }
 }
 
