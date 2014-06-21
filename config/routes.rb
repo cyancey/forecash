@@ -1,4 +1,7 @@
 Forecash::Application.routes.draw do
+  root :to => 'transactions#index'
+  resources :transactions
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
