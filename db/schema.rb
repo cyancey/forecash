@@ -16,11 +16,10 @@ ActiveRecord::Schema.define(:version => 20140621205215) do
   create_table "transactions", :force => true do |t|
     t.text     "description"
     t.float    "amount"
-    t.string   "frequency"
-    t.integer  "number_of_transactions"
-    t.date     "first_transaction_date"
-    t.datetime "created_at",             :null => false
-    t.datetime "updated_at",             :null => false
+    t.boolean  "cash_inflow"
+    t.date     "date"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end
