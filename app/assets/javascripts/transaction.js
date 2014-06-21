@@ -7,3 +7,13 @@ function Transaction(args){
 }
 
 Transaction.prototype = {}
+
+function Scenario(args){
+  this.transactions = args['transactions'] || []
+}
+
+Scenario.prototype = {
+  push: function(transaction){
+    this.transactions.push(transaction)
+  }
+}
