@@ -12,14 +12,16 @@ var Controller = {
     request.fail(debug)
   },
   handleTransactions: function(response){
-    var transactions = this.importTransactions(response)
-    this.scenario = new Scenario(transactions)
+    this.scenario = new Scenario(this.importTransactions(response))
     List.update(scenario)
     Chart.update(scenario)
   },
   importTransactions: function(data){
-    //iterate over data
-    //make a new transaction object out of each data
+    var transactions = []
+    for(var index = 0; index < data.length; index++){
+      transactions.push(new Transaction(data[index]))
+    }
+    return transactions
   },
   debug: function(response){
     debugger

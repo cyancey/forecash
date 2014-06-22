@@ -1,5 +1,5 @@
 function Transaction(args){
-  this.id = args['id']
+  this.id = args['id'] || null
   this.description = args['description']
   this.amount = args['amount']
   this.inflow = args['inflow']
