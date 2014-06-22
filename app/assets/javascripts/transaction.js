@@ -1,5 +1,5 @@
 function Transaction(args){
-  this.id = args['id'] || null
+  this.id = args['id']
   this.description = args['description']
   this.amount = args['amount']
   this.inflow = args['cash_inflow']
@@ -7,6 +7,9 @@ function Transaction(args){
 }
 
 Transaction.prototype = {}
+
+// EVERYTHING BELOW THIS LINE SHOULD BE REFACTORED INTO APPLICATIONCONTROLLER / CHART / DATACONVERTER
+
 
 function Scenario(transactions){
   this.transactions = transactions
