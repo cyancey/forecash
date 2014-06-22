@@ -9,6 +9,7 @@ Scenario.prototype = {
     for (var i = 0; i < transactionsLength; i++) {
       this.transactions.push(new Transaction(transactions[i]))
     }
+    this.sortTransactions()
   },
   getTransactions: function(){
     var request = $.ajax({
@@ -28,7 +29,15 @@ Scenario.prototype = {
   },
   handleTransactions: function(response){
     this.transactions = this.importTransactions(response)
+    this.sortTransactions()
     this.update()
+  },
+  sortTransactions: function() {
+    this.transactions.sort(function(a, b) {
+      var aDate = new Date(a.date)
+      var bDate = new Date(b.date)
+      return aDate.getTime() - bDate.getTime()
+    });
   },
   importTransactions: function(data){
     var transactions = []

@@ -3,7 +3,7 @@
   	<fieldset>
       <div class="pure-control-group">
         <%= label_tag(:description, "Description") %>
-        <%= text_field_tag(:description, content = nil) %>  
+        <%= text_field_tag(:description, content = nil) %>
       </div>
       <div class="pure-control-group">
         <%= label_tag(:number, "Amount") %>
@@ -15,14 +15,14 @@
         <%= radio_button_tag :cash_flow, :negative %> Negative
       </div>
           <div class="pure-control-group">
-        <%= label_tag("Date:") %>
+        <%= label_tag("Date") %>
         <input type="date" name="date">
       </div>
       <div class="pure-control-group">
-        <%= label_tag(:frequency, "Repeats") %> 
+        <%= label_tag(:frequency, "Repeats") %>
         <%= select_tag(:frequency, options_for_select([['Not at all', :no_repeat], ["Daily", :daily], ["Weekly", :weekly], ["Monthly", :monthly], ["Annually", :annually]])) %><br><br>
       <div class="pure-control-group">
-        <%= label_tag(:num_times, "How Many Times") %> 
+        <%= label_tag(:num_times, "How Many Times") %>
         <%= number_field_tag(:num_times, value = nil, options = {min: 1, step: 1}) %>
       </div>
       <div class="pure-controls">
