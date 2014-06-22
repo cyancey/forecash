@@ -1,5 +1,7 @@
 $(document).ready(function() {
-  var chart = new Highcharts.Chart(options)
+  // var chart = new Highcharts.Chart(options)
+  var ajaxControll = new ajaxController()
+  ajaxControll.start()
 })
 
 var options = {

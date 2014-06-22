@@ -1,4 +1,5 @@
+<ul id="view_transactions"> 
 <% @transactions.each do |transaction| %>
-	<%= transaction.description %>
-	<br>
+	<li><%= transaction.description %></li>
 <% end %>
+</ul>

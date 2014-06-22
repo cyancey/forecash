@@ -1,4 +1,8 @@
-var ajaxController = {
+var ajaxController = function(){
+
+};
+
+ajaxController.prototype = {
 	start: function() {
 		this.getNewTransaction()
 	},
@@ -6,7 +10,7 @@ var ajaxController = {
 		$("#add-transaction").on("ajax:success", this.transactionsToHome)
 	},
 
-	transactionsToHome: function(){
-		debugger
+	transactionsToHome: function(e, transaction){
+		$("#view_transactions").append("<li>" + transaction.description + "</li>")
 	}
 }
