@@ -1,6 +1,4 @@
 $(document).ready(function() {
-  // var chart = new Highcharts.Chart(options)
-  // Controller.start()
   ApplicationController = new ApplicationController(new ChartController(), new Scenario())
   ApplicationController.initialize()
 })
