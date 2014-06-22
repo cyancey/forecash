@@ -4,8 +4,11 @@ function Scenario(){
 }
 
 Scenario.prototype = {
-  addTransaction: function(transaction){
-    this.transactions.push(transaction)
+  addTransaction: function(transactions) {
+    var transactionsLength = transactions.length
+    for (var i = 0; i < transactionsLength; i++) {
+      this.transactions.push(new Transaction(transactions[i]))
+    }
   },
   getTransactions: function(){
     var request = $.ajax({
