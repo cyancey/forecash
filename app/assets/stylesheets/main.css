@@ -2,7 +2,6 @@ a.btn{
   z-index: 1;
 }
 
-
 .navbar {
   min-height: 50px;
   max-height: 90px;
@@ -43,6 +42,10 @@ h2 {
   }
   .carousel-caption {
     padding-bottom: 220px;
+  }
+
+  .carousel-caption h1 {
+    font-size: 2.5em;
   }
 }
 
