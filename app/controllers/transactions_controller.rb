@@ -6,13 +6,13 @@ class TransactionsController < ApplicationController
 	def create # get to Frequency if have time, may have to delete frequency
 		p params
 
-		# @transaction = Transaction.create(description: params[:description], amount: params[:number], 
+		# @transaction = Transaction.create(description: params[:description], amount: params[:number],
 		# 	cash_inflow: Transaction.inflow_converter(params[:cash_flow]), date: params[:date])
 
 		if params[:frequency] == "daily"
 			0.upto(params[:num_times].to_i - 1).each do |day_in_future|
 				@transaction = Transaction.create(description: params[:description], amount: params[:number], cash_inflow: Transaction.inflow_converter(params[:cash_flow]), date: (Date.parse(params[:date]) + day_in_future))
-			end	
+			end
 
 		elsif params[:frequency] == "weekly"
 			0.upto(params[:num_times].to_i - 1).each do |week_in_future|
@@ -35,7 +35,13 @@ class TransactionsController < ApplicationController
 		render json: @transaction
 	end
 
-	def destroy
-			
-	end
+  def destroy
+    @transaction = Transaction.find(params[:id])
+    if @transaction.destroy
+      render json: Transaction.all
+    else
+      render json: { errors: @transaction.errors.full_messages }
+    end
+  end
+
 end
