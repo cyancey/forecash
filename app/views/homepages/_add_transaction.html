@@ -13,7 +13,7 @@
   <%= select_tag(:frequency, options_for_select([['Does Not Repeat', :no_repeat], ["Daily", :daily], ["Weekly", :weekly], ["Monthly", :monthly], ["Quarterly", :quarterly], ["Annually", :annually]])) %>
   <br>
   <%= label_tag("Date:") %>
-	<%= select_date() %>
+  <input type="date" name="date">
 	<br>
   <%= submit_tag("Add Transaction!") %>
 <% end %>

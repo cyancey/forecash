@@ -4,7 +4,7 @@ class TransactionsController < ApplicationController
 	end
 
 	def create
-		# Transaction.create(description: params[:description], number: params[:number], 
-		# 	)
+		Transaction.create(description: params[:description], amount: params[:number], 
+			cash_inflow: params[:cash_inflow], date: params[:date])
 	end
 end
