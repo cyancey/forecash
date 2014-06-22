@@ -4,6 +4,10 @@ function Scenario(){
 }
 
 Scenario.prototype = {
+  add: function(transaction){
+    this.transactions.push(transaction)
+  },
+
   getTransactions: function(){
     var request = $.ajax({
       url: "/transactions",
