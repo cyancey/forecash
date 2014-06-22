@@ -1,7 +1,13 @@
-var Controller = {
-  start: function(){
-    this.getTransactions()
+function Scenario(){
+  this.transactions = []
+  this.getTransactions()
+}
+
+Scenario.prototype = {
+  add: function(transaction){
+    this.transactions.push(transaction)
   },
+
   getTransactions: function(){
     var request = $.ajax({
       url: "/transactions",
@@ -9,13 +15,10 @@ var Controller = {
     })
 
     request.done(this.handleTransactions.bind(this))
-    request.fail(this.debug)
   },
   handleTransactions: function(response){
-    var transactions = this.importTransactions(response)
-    this.scenario = new Scenario(transactions)
-    List.update(this.scenario)
-    // Chart.update(this.scenario)
+    this.transactions = this.importTransactions(response)
+    this.update()
   },
   importTransactions: function(data){
     var transactions = []
@@ -24,7 +27,7 @@ var Controller = {
     }
     return transactions
   },
-  debug: function(response){
-    debugger
+  update: function(){
+    ApplicationController.update(this.transactions)
   }
 }

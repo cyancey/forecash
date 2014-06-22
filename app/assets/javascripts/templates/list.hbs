@@ -9,9 +9,9 @@
   </tr>
   {{#each transactions}}
   {{#if inflow}}
-  <tr class = "inflow">
+  <tr id = "{{id}}" class = "inflow">
   {{else}}
-  <tr class = "outflow">
+  <tr id = "{{id}}" class = "outflow">
   {{/if}}
     <td>{{date}}</td>
     <td>{{description}}</td>
