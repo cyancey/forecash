@@ -1,6 +1,9 @@
 $(document).ready(function() {
   ApplicationController = new ApplicationController(new ChartController(), new Scenario())
   ApplicationController.initialize()
+
+  // STYLE
+  $('#add-form').on('click', function(){$('#transaction-form').show(1000)})
 })
 
 // var options = {
