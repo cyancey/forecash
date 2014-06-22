@@ -17,9 +17,34 @@ Scenario.prototype = {
     this.transactions.push(transaction)
   },
 
-  buildChartData: function() {
+  buildChartData: function(startBalance, numDays) {
     var balances = []
     var date = new Date(Date.now())
+    var transactions = this.transactions
+    var transactionsLength = transactions.length
+    var balance = startBalance
+
+    for(var i=0; i < numDays; i++) {
+      var change = 0
+      for (var y=0; y<transactionsLength; y++) {
+        if(this.dateMatch(transactions[y].date, date)) {
+          console.log(transactions[y].cash_inflow)
+          if(transactions[y].cash_inflow) {
+            change += transactions[y].amount
+            console.log(transactions[y].amount)
+            console.log(change)
+          } else {
+            change -= transactions[y].amount
+            console.log(transactions[y].amount)
+            console.log(change)
+          }
+        }
+      }
+      balance += change
+      balances.push(balance)
+      date = this.incrementDay(date)
+    }
+    return balances
   },
 
   dateMatch: function(dateOne, dateTwo) {
@@ -40,5 +65,6 @@ Scenario.prototype = {
     var day = dateObj.getDate()
     var year = dateObj.getFullYear()
     return new Date(year, month, day)
-  }
+  },
+
 }
