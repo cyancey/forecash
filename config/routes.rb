@@ -1,5 +1,5 @@
 Forecash::Application.routes.draw do
-  root :to => 'homepages'
+  root :to => 'homepages#home'
   resources :homepages
   resources :transactions
 
