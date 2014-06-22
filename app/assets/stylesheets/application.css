@@ -11,6 +11,7 @@
  *= require_self
  *= require_bootstrap.min
  *= require_carousel
+ *= require_main
  *= require_tree .
  */
 
