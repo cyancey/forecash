@@ -18,6 +18,9 @@
   font-family: 'Courgette', cursive;
 }
 
+h2 {
+  font-family: 'Poiret One', cursive;
+}
 
 @media (max-width: 1036px) {
   #myCarousel, .carousel, .carousel-inner {
@@ -39,7 +42,7 @@
 @media (max-width: 530px) {
 
   #myCarousel, .carousel, .carousel-inner  {
-    height: 200px;
+    height: 190px;
   }
 
   .carousel-caption h1 {
