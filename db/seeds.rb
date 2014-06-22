@@ -6,15 +6,15 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-50.times do
-  def time_rand(from = Time.now, to = Time.new(2015, 12, 31))
+10.times do
+  def time_rand(from = Time.now, to = Time.new(2014, 7, 1))
     Time.at(from + rand * (to.to_f - from.to_f)).to_date
   end
 
   description = Faker::Company.catch_phrase
   amount = rand(10000).to_f/10
   date = time_rand
-  cash_inflow = [true, false].sample
+  cash_inflow = true
 
   Transaction.create(description: description, amount: amount, date: date, cash_inflow: cash_inflow)
 end
