@@ -13,7 +13,6 @@ ListView.prototype = {
     $(this.containerSelector).empty()
   },
   display: function(context){
-    debugger
     $(this.containerSelector).append(this.template(context))
   }
 }
