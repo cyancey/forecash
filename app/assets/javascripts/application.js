@@ -13,7 +13,6 @@
 
 //= require jquery
 //= require jquery_ujs
-//= require transaction.js
 //= require handlebars
 //= require bootstrap.min
 //= require_tree ./templates
