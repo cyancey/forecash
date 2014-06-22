@@ -1,6 +1,7 @@
 .navbar {
-  min-height: 100px;
-  padding-top: 4%;
+  min-height: 50px;
+  max-height: 90px;
+  padding-top: 1.5%;
   padding-bottom: 2%;
 }
 
@@ -15,6 +16,7 @@
 
 .carousel-caption h1 {
   font-family: 'Courgette', cursive;
+  font-size: 4em;
 }
 
 h2 {
