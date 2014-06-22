@@ -1,18 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ipp="" lang="en">
 <head>
-  <title>Forecash</title>
-  <meta name="viewport" content="width=device-width">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+  <link href="assets/carousel.css" rel="stylesheet">
+  <link href="assets/bootstrap.min.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Poiret+One|Kaushan+Script|Courgette' rel='stylesheet' type='text/css'>
+  <title>ForeCash</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <script type="text/javascript" src="https://appcenter.intuit.com/Content/IA/intuit.ipp.anywhere.js"> 
+  </script>   
+  <script>intuit.ipp.anywhere.setup({
+    menuProxy: 'http://example.com/myapp/BlueDotMenu',
+    grantUrl: 'http://example.com/myapp/RequestOAuthToken'});
+  </script>
   <script src="http://code.highcharts.com/highcharts.js"></script>
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/base-min.css">
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
 </head>
 <body>
+  <div class="container">
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">ForeCash</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
 
 <%= yield %>
 
-</body>
+
+    <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+      <p>&copy; 2014 Pocket Gophers &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer>
+
+    </div><!-- /.container -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  </body>
 </html>

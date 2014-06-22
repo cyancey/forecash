@@ -1,0 +1,55 @@
+.navbar {
+  min-height: 100px;
+  padding-top: 4%;
+  padding-bottom: 2%;
+}
+
+.navbar-brand {
+  font-family: 'Poiret One', cursive;
+  font-size: 4em;
+}
+
+.item {
+  width:100%;
+}
+
+.carousel-caption h1 {
+  font-family: 'Courgette', cursive;
+}
+
+h2 {
+  font-family: 'Poiret One', cursive;
+}
+
+@media (max-width: 1036px) {
+  #myCarousel, .carousel, .carousel-inner {
+   height: 300px;
+  }
+  .carousel-caption {
+    padding-bottom: 180px;
+  }
+}
+@media (max-width: 890px) {
+  #myCarousel, .carousel, .carousel-inner  {
+    height: 250px;
+  }
+  .carousel-caption {
+    padding-bottom: 220px;
+  }
+}
+
+@media (max-width: 530px) {
+
+  #myCarousel, .carousel, .carousel-inner  {
+    height: 190px;
+  }
+
+  .carousel-caption h1 {
+    font-size: 1.5em;
+  }
+
+  .carousel-caption {
+    padding-bottom: 270px;
+  }
+
+}
