@@ -8,13 +8,14 @@ var Controller = {
       type: "get"
     })
 
-    request.done(handleTransactions)
-    request.fail(debug)
+    request.done(this.handleTransactions.bind(this))
+    request.fail(this.debug)
   },
   handleTransactions: function(response){
-    this.scenario = new Scenario(this.importTransactions(response))
-    List.update(scenario)
-    Chart.update(scenario)
+    var transactions = this.importTransactions(response)
+    this.scenario = new Scenario(transactions)
+    List.update(this.scenario)
+    // Chart.update(this.scenario)
   },
   importTransactions: function(data){
     var transactions = []

@@ -1,9 +1,16 @@
-var List = {
-  update: function(scenario){
+function ListView() {
+  console.log("works")
+}
 
+ListView.prototype = {
+  speak: function(){
+    console.log('works')
   }
 }
 
-List.view = {
-
+var List = {
+  view: new ListView(),
+  update: function(scenario){
+    debugger
+  }
 }
