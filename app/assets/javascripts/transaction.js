@@ -53,7 +53,7 @@ Scenario.prototype = {
     var month = dateObj.getMonth()
     var day = dateObj.getDate()
     var year = dateObj.getFullYear()
-    return new Date(year, month, day+1)
+    return new Date(year, month, day + 1)
   },
 
   sanatizeDate: function(dateObj) {
@@ -61,6 +61,6 @@ Scenario.prototype = {
     var day = dateObj.getDate()
     var year = dateObj.getFullYear()
     return new Date(year, month, day)
-  },
+  }
 
 }
