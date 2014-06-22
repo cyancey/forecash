@@ -6,19 +6,8 @@
 }
 
 .navbar-brand {
-  
-  font-size: 4em;
-}
-
-#fore {
   font-family: 'Poiret One', cursive;
-}
-
-#cash {
-  /*font-family: 'Courgette', cursive;*/
-/*    font-family: 'Kaushan Script', cursive;
-*/     font-family: 'Poiret One', cursive;
-
+  font-size: 4em;
 }
 
 .item {
@@ -61,7 +50,4 @@
     padding-bottom: 270px;
   }
 
-  img#hero {
-    visibilty:hidden;
-  }
 }
