@@ -1,22 +1,27 @@
 {{! Call this template in javascript like this: HandlebarsTemplates['list'](context) }}
 
 {{! NOTE: Style the inflow green and outflow red }}
-<table id="list">
-  <tr>
-    <th>Date</th>
-    <th>Description</th>
-    <th>Amount</th>
-  </tr>
-  {{#each transactions}}
-  {{#if inflow}}
-  <tr id = "{{id}}" class = "inflow">
-  {{else}}
-  <tr id = "{{id}}" class = "outflow">
-  {{/if}}
-    <td>{{date}}</td>
-    <td>{{description}}</td>
-    <td>{{amount}}</td>
-    <td><button class="remove-transaction">Remove</button></td>
-  </tr>
-  {{/each}}
+<table id="list" class="pure-table pure-table-striped">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Description</th>
+      <th>Amount</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody> 
+    {{#each transactions}}
+    <tr id = "{{id}}">
+      <td>{{date}}</td>
+      <td>{{description}}</td>
+      {{#if inflow}}
+        <td class="amount inflow">${{amount}}</td>
+      {{else}}
+        <td class="amount outflow">${{amount}}</td>
+      {{/if}}
+      <td><button class="remove-transaction pure-button button-orange">Remove</button></td>
+    </tr>
+    {{/each}}
+  </tbody> 
 </table>

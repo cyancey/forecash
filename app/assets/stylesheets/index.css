@@ -1,5 +1,33 @@
 .centered {
   margin-left: auto;
   margin-right: auto;
-  width: 60%;
+  max-width: 500px;
+}
+  .centered.thin{
+    margin-left: 25%;
+    width: 200px;
+  }
+
+.wide{
+  max-width: 768px;
+}
+
+.amount{
+  font-weight: bold;
+}
+
+  .inflow{
+   color: green;
+  }
+
+  .outflow{
+    color: red;
+  }
+
+.button-orange{
+  background: rgb(223, 117, 20); /* this is an orange */
+}
+
+.button-xlarge{
+  font-size: 125%;
 }
