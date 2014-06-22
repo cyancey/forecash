@@ -7,11 +7,18 @@ Scenario.prototype = {
   addTransaction: function(transaction){
     this.transactions.push(transaction)
   },
-
   getTransactions: function(){
     var request = $.ajax({
       url: "/transactions",
       type: "get"
+    })
+
+    request.done(this.handleTransactions.bind(this))
+  },
+  removeTransaction: function(event) {
+    var request = $.ajax({
+      url: "/transactions/" + event.target.parentNode.parentNode.id,
+      type: "delete"
     })
 
     request.done(this.handleTransactions.bind(this))
