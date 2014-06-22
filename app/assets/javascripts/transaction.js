@@ -28,15 +28,11 @@ Scenario.prototype = {
       var change = 0
       for (var y=0; y<transactionsLength; y++) {
         if(this.dateMatch(transactions[y].date, date)) {
-          console.log(transactions[y].cash_inflow)
-          if(transactions[y].cash_inflow) {
+          console.log(transactions[y].inflow)
+          if(transactions[y].inflow) {
             change += transactions[y].amount
-            console.log(transactions[y].amount)
-            console.log(change)
           } else {
             change -= transactions[y].amount
-            console.log(transactions[y].amount)
-            console.log(change)
           }
         }
       }
