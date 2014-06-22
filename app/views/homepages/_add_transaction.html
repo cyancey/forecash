@@ -1,4 +1,4 @@
-<%= form_tag("/transactions", method: "post", remote: true, id: "add-transaction") do %>
+<%= form_tag("/transactions", method: "post", remote: true, id: "add-transaction", html: {class: 'pure-form'}) do %>
 	<%= label_tag(:description, "Description:") %>
 	<br>
   <%= text_area_tag(:description, content = nil, size: "50x10") %>
