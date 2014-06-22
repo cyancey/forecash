@@ -1,0 +1,61 @@
+.navbar {
+  min-height: 100px;
+  padding-top: 4%;
+  padding-bottom: 2%;
+  background-color: #210D0E;
+}
+
+.navbar-brand {
+  
+  font-size: 4em;
+}
+
+#fore {
+  font-family: 'Poiret One', cursive;
+}
+
+#cash {
+  /*font-family: 'Courgette', cursive;*/
+/*    font-family: 'Kaushan Script', cursive;
+*/     font-family: 'Poiret One', cursive;
+
+}
+
+.item {
+  width:100%;
+}
+
+.carousel-caption h1 {
+  font-family: 'Courgette', cursive;
+}
+
+
+@media (max-width: 1036px) {
+  #myCarousel {
+   height: 300px;
+  }
+  .carousel-inner {
+    height: 300px;
+  }
+}
+@media (max-width: 830px) {
+  #myCarousel {
+    height: 250px;
+  }
+  .carousel-inner {
+    height: 250px;
+  }
+
+}
+
+@media (max-width: 530px) {
+  #myCarousel {
+  }
+
+  .carousel-inner {
+    height: 0;
+  }
+  .item img {
+   display: hidden;
+  }
+}
