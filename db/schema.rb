@@ -22,5 +22,4 @@ ActiveRecord::Schema.define(:version => 20140621205215) do
     t.datetime "updated_at",  :null => false
   end
 
-
 end
