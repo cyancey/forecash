@@ -28,7 +28,3 @@ var Controller = {
     debugger
   }
 }
-
-$(document).ready(function(){
-  Controller.start()
-})
