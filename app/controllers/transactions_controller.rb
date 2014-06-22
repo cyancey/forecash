@@ -29,6 +29,8 @@ class TransactionsController < ApplicationController
 			0.upto(params[:num_times].to_i - 1).each do |year_in_future|
 				@transaction = Transaction.create(description: params[:description], amount: params[:number], cash_inflow: Transaction.inflow_converter(params[:cash_flow]), date: (Date.parse(params[:date]) + year_in_future * 365))
 			end
+		else
+			@transaction = Transaction.create(description: params[:description], amount: params[:number], cash_inflow: Transaction.inflow_converter(params[:cash_flow]), date: params[:date])
 		end
 		render json: @transaction
 	end
