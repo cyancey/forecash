@@ -1,5 +1,5 @@
 <ul id="view_transactions"> 
 <% @transactions.each do |transaction| %>
-	<li><%= transaction.description %></li>
+	<li><%= transaction.description%><a id="delete_transaction"></a></li>
 <% end %>
 </ul>
