@@ -8,7 +8,7 @@
 
 50.times do
   def time_rand(from = Time.now, to = Time.new(2015, 12, 31))
-    Time.at(from + rand * (to.to_f - from.to_f))
+    Time.at(from + rand * (to.to_f - from.to_f)).to_date
   end
 
   description = Faker::Company.catch_phrase
