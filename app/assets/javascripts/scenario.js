@@ -4,7 +4,7 @@ function Scenario(){
 }
 
 Scenario.prototype = {
-  add: function(transaction){
+  addTransaction: function(transaction){
     this.transactions.push(transaction)
   },
 
