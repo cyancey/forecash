@@ -1,5 +1,6 @@
 $(document).ready(function() {
   var chart = new Highcharts.Chart(options)
+  Controller.start()
 })
 
 var options = {
