@@ -19,10 +19,10 @@ ajaxController.prototype = {
 		$("#delete_transaction").on("click", this.deleteAjax)
 	},
 
-	deleteAjax: function(){
-		var request = $.ajax({
-			url: "/transactions/" + 
-			type: "delete"
-		})
-	}
+	// deleteAjax: function(){
+	// 	var request = $.ajax({
+	// 		url: "/transactions/" + 
+	// 		type: "delete"
+	// 	})
+	// }
 }
