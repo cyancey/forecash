@@ -6,7 +6,13 @@ function ApplicationController(chartController, scenario) {
 ApplicationController.prototype = {
   initialize: function() {
     this.chartController.initialize()
-    // $('#add-transaction').on('ajax:success', this.updateScenario)
+    $('#add-transaction').on('ajax:success', this.updateScenario)
+  },
+
+  updateScenario: function(e, response) {
+    var transaction = new Transaction(response)
+    // this.scenario.add(transaction)
+    // this.update()
   },
 
   update: function(transactions) {
@@ -15,4 +21,5 @@ ApplicationController.prototype = {
     List.update(this.scenario)
 
   },
+
 }
