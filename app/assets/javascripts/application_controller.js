@@ -10,8 +10,7 @@ ApplicationController.prototype = {
     $('#list-container').on('click', '.remove-transaction', this.removeTransaction.bind(this))
   },
   updateScenario: function(e, response) {
-    var transaction = new Transaction(response)
-    this.scenario.addTransaction(transaction)
+    this.scenario.addTransaction(response)
     this.scenario.update()
   },
   removeTransaction: function(event) {
