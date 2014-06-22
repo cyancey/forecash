@@ -1,22 +1,60 @@
-<%= form_tag("/transactions", method: "post", remote: true, id: "add-transaction", html: {class: 'pure-form'}) do %>
-	<%= label_tag(:description, "Description:") %>
-	<br>
-  <%= text_area_tag(:description, content = nil, size: "50x10") %>
-  <br>
-  <%= label_tag(:number, "Amount:") %>
-  <%= number_field_tag(:number, value = nil, options = {min: 0, step: 0.01}) %>
-  <br>
-  <%= label_tag(:cash_flow, "Cash Flow") %>
-  <%= select_tag(:cash_flow, options_for_select([['Select Option', :no_selection], ['Positive', :positive], ['Negative', :negative]])) %>
-  <br>
-  <%= label_tag(:frequency, "Frequency:") %> 
-  <%= select_tag(:frequency, options_for_select([['Does Not Repeat', :no_repeat], ["Daily", :daily], ["Weekly", :weekly], ["Monthly", :monthly], ["Annually", :annually]])) %>
-  <br>
-  <%= label_tag(:num_times, "Frequency Cycles") %>
-  <%= number_field_tag(:num_times, value = nil, options = {min: 1, step: 1}) %>
-  <br>
-  <%= label_tag("Date:") %>
-  <input type="date" name="date">
-	<br>
-  <%= submit_tag("Add Transaction!") %>
+<%= form_tag("/transactions", method: "post", remote: true, id: "add-transaction", class: 'pure-form pure-form-aligned') do %>
+	<fieldset>
+    <div class="pure-control-group">
+      <%= label_tag(:description, "Description") %>
+      <%= text_field_tag(:description, content = nil) %>  
+    </div>
+    <div class="pure-control-group">
+      <%= label_tag(:number, "Amount") %>
+      <%= number_field_tag(:number, value = nil, options = {min: 0, step: 0.01}) %>
+    </div>
+    <div class="pure-control-group">
+      <%= label_tag(:cash_flow, "Cash Flow") %>
+      <%= radio_button_tag :cash_flow, :positive %> Positive
+      <%= radio_button_tag :cash_flow, :negative %> Negative
+    </div>
+    <div class="pure-control-group">
+      <%= label_tag(:frequency, "Repeats") %> 
+      <%= select_tag(:frequency, options_for_select([['Not at all', :no_repeat], ["Daily", :daily], ["Weekly", :weekly], ["Monthly", :monthly], ["Annually", :annually]])) %>
+      <%= number_field_tag(:num_times, value = nil, options = {min: 1, step: 1}) %><br><br>
+    <div class="pure-control-group">
+      <%= label_tag("Date:") %>
+      <input type="date" name="date">
+    </div>
+    <div class="pure-controls">
+      <%= submit_tag("Add Transaction!", class: "pure-button pure-button-primary") %>
+    </div>
+  </fieldset>
 <% end %>
+
+<form class="pure-form pure-form-aligned">
+    <fieldset>
+        <div class="pure-control-group">
+            <label for="name">Username</label>
+            <input id="name" type="text" placeholder="Username">
+        </div>
+
+        <div class="pure-control-group">
+            <label for="password">Password</label>
+            <input id="password" type="password" placeholder="Password">
+        </div>
+
+        <div class="pure-control-group">
+            <label for="email">Email Address</label>
+            <input id="email" type="email" placeholder="Email Address">
+        </div>
+
+        <div class="pure-control-group">
+            <label for="foo">Supercalifragilistic Label</label>
+            <input id="foo" type="text" placeholder="Enter something here...">
+        </div>
+
+        <div class="pure-controls">
+            <label for="cb" class="pure-checkbox">
+                <input id="cb" type="checkbox"> I've read the terms and conditions
+            </label>
+
+            <button type="submit" class="pure-button pure-button-primary">Submit</button>
+        </div>
+    </fieldset>
+</form>
