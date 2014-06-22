@@ -2,7 +2,7 @@ function Transaction(args){
   this.id = args['id'] || null
   this.description = args['description']
   this.amount = args['amount']
-  this.inflow = args['inflow']
+  this.inflow = args['cash_inflow']
   this.date = args['date']
 }
 
