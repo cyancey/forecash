@@ -10,7 +10,10 @@
   <%= select_tag(:cash_flow, options_for_select([['Select Option', :no_selection], ['Positive', :positive], ['Negative', :negative]])) %>
   <br>
   <%= label_tag(:frequency, "Frequency:") %> 
-  <%= select_tag(:frequency, options_for_select([['Does Not Repeat', :no_repeat], ["Daily", :daily], ["Weekly", :weekly], ["Monthly", :monthly], ["Quarterly", :quarterly], ["Annually", :annually]])) %>
+  <%= select_tag(:frequency, options_for_select([['Does Not Repeat', :no_repeat], ["Daily", :daily], ["Weekly", :weekly], ["Monthly", :monthly], ["Annually", :annually]])) %>
+  <br>
+  <%= label_tag(:num_times, "Frequency Cycles") %>
+  <%= number_field_tag(:num_times, value = nil, options = {min: 1, step: 1}) %>
   <br>
   <%= label_tag("Date:") %>
   <input type="date" name="date">

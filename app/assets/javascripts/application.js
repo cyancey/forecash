@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require transaction.js
 //= require handlebars
 //= require_tree ./templates
 //= require_tree .
