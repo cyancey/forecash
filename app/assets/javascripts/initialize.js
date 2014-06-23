@@ -10,9 +10,9 @@ $(document).ready(function() {
   })
 
   $('#cancel-form').on('click', function() {
-    $('#add-form').hide()
-    $('#cancel-form').show()
-    $('#transaction-form').show(1000)
+    $('#add-form').show()
+    $('#cancel-form').hide()
+    $('#transaction-form').hide(1000)
   })
 })
 
