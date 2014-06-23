@@ -1,7 +1,8 @@
 Forecash::Application.routes.draw do
-  root :to => 'homepages#index'
+  root :to => 'homepages#home'
   resources :homepages
   resources :transactions
+
 
 
   # The priority is based upon order of creation:
