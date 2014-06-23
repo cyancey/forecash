@@ -1,10 +1,12 @@
-function ApplicationController(chartController, scenario) {
+function ApplicationController(chartController, scenario, formController) {
   this.chartController = chartController
   this.scenario = scenario
+  this.formController = formController
 }
 
 ApplicationController.prototype = {
   initialize: function() {
+    this.formController.initialize()
     this.chartController.initialize()
     $('#add-transaction').on('ajax:success', this.updateScenario.bind(this))
     $('#list-container').on('click', '.remove-transaction', this.removeTransaction.bind(this))
