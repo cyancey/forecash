@@ -3,14 +3,26 @@
 <head>
   <title>Forecash</title>
   <meta name="viewport" content="width=device-width">
+  
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/base-min.css">
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Poiret+One|Kaushan+Script|Courgette' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <script src="http://code.highcharts.com/highcharts.js"></script>
-  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/base-min.css">
-  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
 </head>
 <body>
+  <div class="container">
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/#">ForeCash</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <%= yield %>
 

@@ -8,8 +8,30 @@
     width: 200px;
   }
 
+/* CHART */
+
+.top{
+  margin-top: 110px;
+}
+
 .wide{
   max-width: 768px;
+}
+
+/* FORM */
+
+.button-xlarge{
+  font-size: 125%;
+}
+
+.form{
+
+}
+
+
+/* LIST */
+.list{
+  margin-left: 20px;
 }
 
 .amount{
@@ -28,6 +50,17 @@
   background: rgb(223, 117, 20); /* this is an orange */
 }
 
-.button-xlarge{
-  font-size: 125%;
+/* MEDIA QUERIES */
+
+
+@media (max-width: 530px) {
+  .list{
+    margin-left: 0;
+  }
+
+  .form{
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+  }
 }
