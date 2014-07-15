@@ -20,6 +20,8 @@ ListView.prototype = {
 var List = {
   view: new ListView(),
   update: function(scenario){
+    var sortedMonths = DataMonger.sortIntoMonths(scenario)
+    console.log(sortedMonths)
     this.view.refresh(scenario)
   }
 }
