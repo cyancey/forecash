@@ -1,4 +1,5 @@
 var DataMonger = {
+  months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
   transactionsToChartData: function(transactions, numDays, startBalance) {
     var balances = []
     var date = new Date(Date.now())
@@ -43,4 +44,30 @@ var DataMonger = {
     var year = dateObj.getFullYear()
     return new Date(year, month, day)
   },
+  createMonths: function() {
+    var smartMonths = []
+    var monthsLength = this.months.length
+    for (var i = 0; i < monthsLength; i++) {
+      smartMonths.push(new Month(this.months[i]))
+    }
+    return smartMonths;
+  },
+  sortIntoMonths: function(scenario) {
+    var smartMonths = this.createMonths()
+    var currentMonth = new Date(Date.now()).getMonth()
+    var transactionsLength = scenario.transactions.length
+    for (var i = 0; i < transactionsLength; i++) {
+      var transactionMonth = new Date(scenario.transactions[i].date).getMonth()
+      smartMonths[transactionMonth].transactions.push(scenario.transactions[i])
+    }
+    var rearrangedMonths = this.rearrangeMonths(currentMonth, smartMonths)
+    return rearrangedMonths
+  },
+  rearrangeMonths: function(currentMonth, smartMonths) {
+    var pastMonths = smartMonths.splice(0, currentMonth)
+    for (var i = 0; i < pastMonths.length; i++) {
+      smartMonths.push(pastMonths[i])
+    }
+    return smartMonths
+  }
 }
