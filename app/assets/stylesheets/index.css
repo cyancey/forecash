@@ -30,6 +30,15 @@
 
 
 /* LIST */
+.month{
+  width: 458px;
+  text-align: center;
+}
+
+.monthly_total {
+  float: right;
+}
+
 .list{
   margin-left: 20px;
 }
@@ -56,6 +65,10 @@
 @media (max-width: 530px) {
   .list{
     margin-left: 0;
+  }
+
+  .month{
+    width: 100%;
   }
 
   .form{
