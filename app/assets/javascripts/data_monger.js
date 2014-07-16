@@ -24,20 +24,17 @@ var DataMonger = {
     }
     return balances
   },
-
   dateMatch: function(dateOne, dateTwo) {
     var date1 = this.sanatizeDate(new Date(Date.parse(dateOne)))
     var date2 = this.sanatizeDate(new Date(Date.parse(dateTwo)))
     return date1.getTime() === date2.getTime()
   },
-
   incrementDay: function(dateObj) {
     var month = dateObj.getMonth()
     var day = dateObj.getDate()
     var year = dateObj.getFullYear()
     return new Date(year, month, day+1)
   },
-
   sanatizeDate: function(dateObj) {
     var month = dateObj.getMonth()
     var day = dateObj.getDate()
@@ -69,5 +66,31 @@ var DataMonger = {
       smartMonths.push(pastMonths[i])
     }
     return smartMonths
+  },
+  setMonthlyTotals: function(sortedMonths) {
+    var sortedMonthsLength = sortedMonths.length
+    for (var i = 0; i < sortedMonthsLength; i++) {
+      var total = 0
+      var transactionsLength = sortedMonths[i].transactions.length
+      for (var j = 0; j < transactionsLength; j++) {
+        if (sortedMonths[i].transactions[j].inflow) {
+          total += sortedMonths[i].transactions[j].amount
+        } else {
+          total -= sortedMonths[i].transactions[j].amount
+        }
+      }
+      sortedMonths[i].total = total
+    }
+  },
+  setMonthlyInflows: function(sortedMonths) {
+    var sortedMonthsLength = sortedMonths.length
+    for (var i = 0; i < sortedMonthsLength; i++) {
+      if (sortedMonths[i].total >= 0) {
+        sortedMonths[i].inflow = true
+      } else {
+        sortedMonths[i].inflow = false
+      }
+      sortedMonths[i].total = Math.abs(sortedMonths[i].total)
+    }
   }
 }
