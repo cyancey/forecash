@@ -2,6 +2,7 @@ function ListView() {
   this.template = HandlebarsTemplates.list
   this.selector = "#list"
   this.containerSelector = "#list-container"
+  this.tableMonthSelector = "thead.monthly-head"
 }
 
 ListView.prototype = {
@@ -24,5 +25,8 @@ var List = {
     DataMonger.setMonthlyTotals(sortedMonths)
     DataMonger.setMonthlyInflows(sortedMonths)
     this.view.refresh({ months: sortedMonths })
+  },
+  bindMonthListener: function() {
+    $(this.view.containerSelector).on('click', this.view.tableMonthSelector, this.view.toggleMonthlyFlow)
   }
 }
