@@ -21,7 +21,8 @@ var List = {
   view: new ListView(),
   update: function(scenario){
     var sortedMonths = DataMonger.sortIntoMonths(scenario)
-    console.log(sortedMonths)
-    this.view.refresh(scenario)
+    DataMonger.setMonthlyTotals(sortedMonths)
+    DataMonger.setMonthlyInflows(sortedMonths)
+    this.view.refresh({ months: sortedMonths })
   }
 }
