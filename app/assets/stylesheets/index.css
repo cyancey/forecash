@@ -30,12 +30,16 @@
 
 
 /* LIST */
+#list-container{
+  margin-bottom: 30px;
+}
+
 .month{
   width: 458px;
   text-align: center;
 }
 
-.monthly_total {
+.monthly-total {
   float: right;
 }
 
