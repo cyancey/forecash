@@ -15,6 +15,10 @@ ListView.prototype = {
   },
   display: function(context){
     $(this.containerSelector).append(this.template(context))
+  },
+  toggleMonthlyFlow: function(event) {
+    var month = '.' + event.currentTarget.classList[1]
+    $('table' + month).toggle()
   }
 }
 
