@@ -1,7 +1,20 @@
 {{! Call this template in javascript like this: HandlebarsTemplates['list'](context) }}
 
 {{! NOTE: Style the inflow green and outflow red }}
-<table id="list" class="pure-table pure-table-striped list">
+
+{{#each months}}
+<table class="pure-table pure-table-horizontal list month">
+  <thead>
+    <tr>
+      <th>{{name}}</th>
+      {{#if inflow}}
+        <th class="amount inflow monthly_total">${{total}}</th>
+      {{else}}
+        <th class="amount outflow monthly_total">${{total}}</th>
+      {{/if}}
+    </tr>
+  </thead>
+<table id="list" class="pure-table pure-table-striped list" hidden>
   <thead>
     <tr>
       <th>Date</th>
@@ -10,7 +23,7 @@
       <th></th>
     </tr>
   </thead>
-  <tbody> 
+  <tbody>
     {{#each transactions}}
     <tr id = "{{id}}">
       <td>{{date}}</td>
@@ -23,5 +36,7 @@
       <td><button class="remove-transaction pure-button">Remove</button></td>
     </tr>
     {{/each}}
-  </tbody> 
+  </tbody>
 </table>
+</table>
+{{/each}}
