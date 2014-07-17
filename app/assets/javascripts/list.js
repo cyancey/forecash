@@ -2,6 +2,7 @@ function ListView() {
   this.template = HandlebarsTemplates.list
   this.selector = "#list"
   this.containerSelector = "#list-container"
+  this.tableMonthSelector = "thead.monthly-head"
 }
 
 ListView.prototype = {
@@ -14,12 +15,22 @@ ListView.prototype = {
   },
   display: function(context){
     $(this.containerSelector).append(this.template(context))
+  },
+  toggleMonthlyFlow: function(event) {
+    var month = '.' + event.currentTarget.classList[1]
+    $('table' + month).toggle()
   }
 }
 
 var List = {
   view: new ListView(),
   update: function(scenario){
-    this.view.refresh(scenario)
+    var sortedMonths = DataMonger.sortIntoMonths(scenario)
+    DataMonger.setMonthlyTotals(sortedMonths)
+    DataMonger.setMonthlyInflows(sortedMonths)
+    this.view.refresh({ months: sortedMonths })
+  },
+  bindMonthListener: function() {
+    $(this.view.containerSelector).on('click', this.view.tableMonthSelector, this.view.toggleMonthlyFlow)
   }
 }

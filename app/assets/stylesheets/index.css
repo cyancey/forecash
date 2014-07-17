@@ -30,6 +30,19 @@
 
 
 /* LIST */
+#list-container{
+  margin-bottom: 30px;
+}
+
+.month{
+  width: 458px;
+  text-align: center;
+}
+
+.monthly-total {
+  float: right;
+}
+
 .list{
   margin-left: 20px;
 }
@@ -56,6 +69,10 @@
 @media (max-width: 530px) {
   .list{
     margin-left: 0;
+  }
+
+  .month{
+    width: 100%;
   }
 
   .form{

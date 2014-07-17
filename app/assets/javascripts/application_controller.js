@@ -8,6 +8,7 @@ ApplicationController.prototype = {
   initialize: function() {
     this.formController.initialize()
     this.chartController.initialize()
+    List.bindMonthListener()
     $('#add-transaction').on('ajax:success', this.updateScenario.bind(this))
     $('#list-container').on('click', '.remove-transaction', this.removeTransaction.bind(this))
   },
