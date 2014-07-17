@@ -51,16 +51,20 @@
   font-weight: bold;
 }
 
-  .inflow{
-   color: green;
-  }
+.inflow{
+ color: green;
+}
 
-  .outflow{
-    color: red;
-  }
+.outflow{
+  color: red;
+}
 
 .button-orange{
   background: rgb(223, 117, 20); /* this is an orange */
+}
+
+.pure-table-horizontal th{
+  border-bottom: none;
 }
 
 /* MEDIA QUERIES */
