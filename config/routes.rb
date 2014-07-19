@@ -1,4 +1,6 @@
 Forecash::Application.routes.draw do
+  mount JasmineRails::Engine => "/specs" if defined?(JasmineRails)
+
   root :to => 'homepages#index'
   resources :homepages
   resources :transactions
