@@ -1,3 +1,8 @@
-== ForeCash
-ForeCash is a small-business cashflow forecasting tool.
-Visualize, Analyze, Decide
+== ForeCash - Visualize, Analyze, Decide
+ForeCash is a small-business cash flow forecasting tool.  Given cash flow projections, ForeCash will display your cash balances on any given day on a yearly chart.  If your balance goes below $0, that means you will be unable to complete that transaction that causes it to go below 0 unless you find financing.
+
+Adding and removing transactions is simple.  Click "Add A Transaction," give the transaction a description, an amount (always positive), whether the transaction is a positive or negative cash flow event, and the date.  If your transaction is recurring, you can select daily, weekly, monthly, or annually, and the amount of times you want to repeat.  
+
+To remove a transaction, simply click the month of the transaction, then click "Remove" for the correct transaction. 
+
+
